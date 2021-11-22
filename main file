@@ -1,0 +1,52 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blueAccent.shade700,
+        appBar: AppBar(
+          title: Center(
+            child: Text('8-ball'),
+          ),
+          backgroundColor: Colors.cyan.shade900,
+        ),
+        body: magic_8(),
+      ),
+    ),
+  );
+}
+
+// ignore: camel_case_types
+class magic_8 extends StatefulWidget {
+  const magic_8({Key key}) : super(key: key);
+
+  @override
+  _magic_8State createState() => _magic_8State();
+}
+
+class _magic_8State extends State<magic_8> {
+  int button = 3;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                setState(() {
+                  button = Random().nextInt(5) + 1;
+                  print('ball was touched');
+                });
+              },
+              child: Image.asset('images/ball$button.png'),
+            ),
+          ),
+        ], //children
+      ),
+    ); //row
+  }
+}
