@@ -10,7 +10,7 @@ void main() {
           title: Center(
             child: Text('8-ball'),
           ),
-          backgroundColor: Colors.cyan.shade900,
+          backgroundColor: Colors.cyan.shade1000,
         ),
         body: magic_8(),
       ),
